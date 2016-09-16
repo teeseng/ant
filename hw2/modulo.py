@@ -1,23 +1,18 @@
 #!/usr/bin/python
 import math
-m = int(input())
-stuff = [1,3,7,9];
-list = []
-for i in range(1,m):
-    d = 1
-    r = 2;
-    while(r != 1):
-        r = (d * i) % m
-        list.append(r)
-        d = d + 1
-    print list
-    del list[:]
-print "-------------------------------------"
-d = 1
-r = 2;
-while(r != 1):
-    r = 9**d % m
-    list.append(r)
-    d = d + 1
-print list
-del list[:]
+
+g = int(input())
+x = int(input())
+n = int(input())
+
+def fast_power(g, x, n):
+    result = 1
+    g = g % n
+    while(x > 0):
+        if(x % 2 == 1):
+            result = (result * g) % n
+        x = x >> 1
+        g = (g * g) % n
+    print result
+
+

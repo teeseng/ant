@@ -1,6 +1,6 @@
 from random import randint
 
-fin = open('elgamal.in')
+fin = open('elgamal.in', 'r')
 fout = open('output.txt', 'w')
 p = int(next(fin))
 g = int(next(fin))
@@ -17,8 +17,11 @@ def fast_power(g, x, n):
         g = (g * g) % n
     return result
 
-k = randint(2, p - 1)
+k = randint(1, p-1)
 c1 = fast_power(g,k,p)
 c2 = (m * fast_power(ga, k, p)) % p
-print >> fout, c1, c2
+print >> fout, c1, "\n",c2
+
+fin.close()
+fout.close()
 
