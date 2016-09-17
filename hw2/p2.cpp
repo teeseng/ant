@@ -37,16 +37,6 @@ int main()
         baby[i] = fast_power(g, i, p);
     }
     int x = 1;
-    
-    /*
-    ~~~~~~~~~~ Working on some group theory stuff ~~~~~~~
-    long ginv = fast_power(g, p - 2, p); // g inverse mod
-    cout << ginv << endl;
-    long val = fast_power(ginv, 36, p);
-    long v1 = (h * fast_power(ginv, 36 * 32, p)) % p;
-    cout << val << endl;
-    cout << v1 << endl;
-    */
 
     /* Calculating giant step, finding match */
     long ginv = fast_power(g, p - 2, p); // g modulo inverse

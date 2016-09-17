@@ -1,3 +1,5 @@
 *.tex
 *.aux
 *.log
+*.swp
+*.in
