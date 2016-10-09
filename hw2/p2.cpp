@@ -10,7 +10,7 @@ int main()
 {
     int p, g, h;
     ifstream fin;
-    fin.open("shanks.in");
+    fin.open("input.txt");
     ofstream fout;
     fout.open("output.txt");
     fin >> p >> g >> h;

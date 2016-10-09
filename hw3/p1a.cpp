@@ -2,36 +2,45 @@
 #include <fstream>
 #include <cmath>
 
+using namespace std;
+
 // Collabs: Noel, Alex, Ariya
  
 // ANT Lib
 long fast_power(int,int,int);
-int shanks_algo(long, long, long, long, long);
+int shanks_algo(long, long, long, long);
+
+int main()
+{
+    // file stuff
+    ifstream fin;
+    fin.open("input.txt", 'r');
+    ofstream fout;
+    fout.open("output.txt", 'r');
+    
+    // 
+    long g,h,p,n;
+    fin >> g >> h >> p >> n;
+     
+}
 
 // shanks_algo black box
-int shanks_algo(long g, long h, long p, long, long)
+int shanks_algo(long g, long h, long p, long n)
 {
     // Find n.
     long order;
     for(int i = 2; i < p; i++)
-    {
         if((p-1) % i == 0)
-        {
             if((fast_power(g, i, p)) == 1L)
             {
                 order = (long)i;
                 break;
             }
-        }
-    }
-    int n = ceil(sqrt(order));
 
     // Appending the list (baby list)
     long baby[n];
     for(int i = 0; i < n; i++)
-    {
         baby[i] = fast_power(g, i, p);
-    }
     int x = 1;
 
     /* Calculating giant step, finding match */
@@ -41,14 +50,12 @@ int shanks_algo(long g, long h, long p, long, long)
         long v1 = (h * fast_power(ginv,j * n, p)) % p;
         int flag = 0;
         for(int i = 0; i < n; i++)
-        {
             if(baby[i] == v1)
             {
                 flag = 1;
                 x = i + (j * n);
                 break;
             }
-        }
         if(flag)
             break;
     }
