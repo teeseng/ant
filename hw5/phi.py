@@ -14,12 +14,12 @@ def gcd(x,y):
         r = x % y
     return y
 
-n = input("choose a number: ")
-
-count = 0
-for i in range(0,n):
-    if(gcd(i,n) == 1):
-        count = count + 1
-
-print count
+n = 1
+while(n != "q"):
+    n = input("choose a number: ")
+    count = 0
+    for i in range(0,n):
+        if(gcd(i,n) == 1):
+            count = count + 1
+    print count
 
