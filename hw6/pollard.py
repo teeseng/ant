@@ -80,7 +80,7 @@ def pollard(ai,bi,gamma,epsilon,g, x, h, p):
         xi = f_x(xi,p,g,h)
         yi = f_x(f_x(yi, p, g, h), p, g, h)
         step = step + 1
-    a = {ai,bi,gamma,epsilon,step}
+    a = [ai,bi,gamma,epsilon,step]
     return a
 
 # ----
@@ -99,11 +99,11 @@ gamma_i = 0
 epsilon_i = 0
 res = pollard(ai, bi, gamma_i, epsilon_i, g, 1, h, p);
 
-epsilon_i = list(res)[0] #epsilon_i
-bi = list(res)[1] #bi
-step = list(res)[2] #step
-ai = list(res)[3] #ai
-gamma_i = list(res)[4] #gamma_i
+ai = res[0]
+bi = res[1]
+gamma_i = res[2]
+epsilon_i = res[3]
+step = res[4]
 
 u = ai - gamma_i
 if(u < 0):
