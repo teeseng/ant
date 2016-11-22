@@ -10,8 +10,8 @@ def mod_comp(left, right, p):
         if (left * i) % p == right:
             return i;
 
-fin = open("input.txt", 'r');
-fout = open("output.txt", 'w');
+fin = open("addition.in", 'r');
+fout = open("addition.out", 'w');
 
 p = int(fin.next())
 a = int(fin.next())
