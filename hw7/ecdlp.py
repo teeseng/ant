@@ -32,8 +32,8 @@ def ellipse_add(p,a,b,x1,y1,x2,y2):
         y3 = ((slope * (x1 - x3)) - y1) % p
         return [x3,y3]
 
-fin = open("ecdlp.in", 'r');
-fout = open("ecdlp.out", 'w');
+fin = open("input.txt", 'r');
+fout = open("output.txt", 'w');
 
 p = int(fin.next())
 a = int(fin.next())

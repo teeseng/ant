@@ -1,5 +1,7 @@
 #!usr/bin/env
 
+import sys
+
 def on_curve(x,y,a,b):
     lhs = y ** 2
     rhs = x**3 + (a * x) + b
@@ -10,8 +12,8 @@ def mod_comp(left, right, p):
         if (left * i) % p == right:
             return i;
 
-fin = open("addition.in", 'r');
-fout = open("addition.out", 'w');
+fin = open("input.txt", 'r');
+fout = open("output.txt", 'w');
 
 p = int(fin.next())
 a = int(fin.next())
@@ -21,6 +23,10 @@ x1 = int(fin.next())
 y1 = int(fin.next())
 x2 = int(fin.next())
 y2 = int(fin.next())
+
+if(x1 == x2):
+    print >> fout, "none"
+    sys.exit("")
 
 if on_curve(x1,y1,a,b):
     print >> fout, x2,y2
