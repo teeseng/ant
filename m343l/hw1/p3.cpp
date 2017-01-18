@@ -24,6 +24,7 @@ int main()
         x = x >> 1;
         g = (g * g) % n;
     }
+
     fout << result << endl;
     return n;
 }

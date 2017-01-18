@@ -70,9 +70,6 @@ def pollard(ai,bi,gamma,epsilon,g, x, h, p):
     epsilon = f_b(f_b(0,xi,p,g,h),xi,p,g,h)
     step = 1
     while(xi != yi):
-#        bi = f_b(bi,p,g,h)
-#        gamma = f_a(f_a(gamma,p,g,h), p, g, h)
-#        epsilon = f_b(f_b(epsilon,p,g,h), p, g, h)
         ai = f_a(ai,xi,p,g,h)
         bi = f_b(bi,xi,p,g,h)
         gamma = f_a( f_a(gamma,yi,p,g,h), f_x(yi,p,g,h), p,g,h)

@@ -73,14 +73,12 @@ def g(P,Q,S,fp):
     if P[0] == Q[0]:
         if S[0] - P[0] < 0:
             return (S[0] - P[0]) * -1
-        return S[0] - P[0] % fp
+        return S[0] - P[0]
     else:
         bot = (S[0] + P[0] + Q[0] - (s**2))
         if bot < 0:
-            bot = bot + fp
+            bot = bot
         top = S[1] - P[1] - (s * (S[0] - P[0]))
-        if top < 0:
-            top = top + fp
         return  mod_comp(bot,top,fp)
 
 
@@ -94,11 +92,11 @@ def f(P, S, m, p, a, b):
     for i in range(1, n):
         if bits[i] == 1:
             g_TP = g(T,P,S,p)
-            f = (f * g_TP) % p
+            f = (f * g_TP)
             T = e_add(p, a, b, T[0], T[1], P[0], P[1])
         else:
             g_TT = g(T,T,S,p)
-            f = ((f**2) * g_TT) % p
+            f = ((f**2) * g_TT)
             T = e_add(p, a, b , T[0], T[1], T[0], T[1])
     return f
 
@@ -118,9 +116,7 @@ P = [36, 60]
 Q = [121, 387]
 S = [0,36]
 
-QS = e_add(p, a, b, S[0], S[1], Q[0], Q[1])
+print f(P,S,m,p,a,b) % p-1
+print f(P,S,m,p,a,b)
 
-fp = f(P, S, 5, 631, 30, 34)
-fq = f(Q, S, 5, 631, 30, 34)
 
-print fp/fq

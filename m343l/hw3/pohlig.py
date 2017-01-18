@@ -94,6 +94,7 @@ def pohlig_hellman(g, h, p):
     return combine(F, result)
 
 if __name__ == "__main__":
+q2 = int(fin.next())
     with open("input.txt", "r") as fi:
         g = int(fi.readline())
         h = int(fi.readline())
