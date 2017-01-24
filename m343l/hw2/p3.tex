@@ -1,0 +1,184 @@
+\documentclass[10pt]{amsart}
+\usepackage[utf8]{inputenc} \usepackage[margin=0.50in]{geometry}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\usepackage{amsthm}
+\usepackage{scrextend}
+\usepackage{amssymb}
+\setlength\parindent{24pt}
+
+\title{Proofs: Homework 2}
+\author{Andrew Tseng: art2589}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\section*{\large \textbf{Problem 3}}
+
+\begin{addmargin}{5pt}    
+\textbf{\large Part ai:} Subgroups of $Z/5$: $\{0,1,2,3,4\}, \{0\}$
+subgroups of $Z/10$: $\{0\}, \{0,1,2,3,4,5,6,7,8,9\}, \{0,5\}, \{2,4,6,8\}$ \\
+
+\noindent \textbf{\large Part aii:} Since $m$ is an integer and $Z$ represents 
+the integer set. Given that $mZ$ is the group of integers of multiples of m, 
+then we know that the group does not contain integer $a$ such that:
+\[ a \mod m > 0\] 
+Since the group $mZ$ does not contain $a$, then $mZ \leq Z$. \\
+
+\noindent 
+\textbf{\large Part bi:} \\ Additive cosets of $mZ$: $mZ + a$, where: 
+\[ a = \{ \ldots, -2m + a, -m + a, a, m + a, 2m + a, \ldots\}\] \\
+In conclusion, the additive cosets of $mZ$ is described as:
+\[(mZ + a, +)\] \\
+
+\noindent
+\textbf{\large Part bii:} \\ gH is a subgroup of G if the left and right cosets 
+the same. If G is commutative, then the group is an abelian group, which 
+indicates that $gH = Hg$.
+
+\noindent
+\textbf{\large Part biii:} \\
+Let $x \in \bigcup X$ where $X = gH$. This means that $x = gh$ for some $h \in H$ 
+and so $x \in H$ and $x \in G$ follows. However, since $x \in H$, then it is clear
+that the coset $x$ is in G, thus the union of these cosets is also in G.
+
+\noindent
+\textbf{\large Part biv:}  \\
+Since gH is a set where 
+\[
+\{gh | h \in H\}
+\]
+then it is clear that if $g \in G$ then the $H \mapsto gH$. This means $h \mapsto gh$, 
+thus its inverse is a multiplication of $g^{-1}$. Thus it is clear that the cosets
+all have the same order thus same size.
+
+\noindent
+\textbf{\large Part bv:}   \\
+Suppose the following:
+\[g_{1}H = \{g_{1}h_{1}| h_{1} \in H\}\]
+\[g_{2}H = \{g_{2}h_{2}| h_{2} \in H\}\]
+There exists a set of $h_{1}, h_{2} \in H$ such that:
+\[g_{1}h_{1} = g_{2}h_{2}\]
+By multipying by $h_{1}^-1$:
+\[g_{1}h_{1}h_{1}^-1 = g_{2}h_{2}h_{1}^-1\]
+It follows that:
+\[g_{1}H = \{(g_{2}h_{2}h_{1})h_{1}^{-1} | h_{1} \in H\}\]
+It becomes clear that the two cosets are either disjoint or equal given that 
+G is the union of all of them annd that $g_{1}, g_{2} \in G$. \\
+
+\noindent 
+\textbf{\large Part c:} \\
+Since $G = \bigcup(g_{i}H)$, which was proven in part biii, then the order of 
+G has this relation with the cosets:
+\[|G| = \sum_{i = 1}^{n}|g_{i}H|\]
+Since all cosets have the same order, this means that:
+\[\sum_{i = 1}^{n}|g_{i}H| = n|H|\]
+Which allows us to conclude that the order of G divides the order of H
+\[\frac{|G|}{|H|} = n\]
+
+\noindent 
+\textbf{\large Part d:}
+\end{addmargin}
+
+\section*{\large \textbf{Problem 1.36}}
+\begin{addmargin}{5pt}
+
+\noindent \textbf{\large Part a:} If $b \mod p$ is either a perfect square, then
+the equation:
+\[X^2 \equiv b \mod p\]
+has two solutions. While if it is not a perfect square, then the equation has
+no solution. \\
+\noindent If $p = 2$, then $X$ always has two solutions because according to Fermet's 
+Little Theorem, 
+\[X^2 \equiv 
+\begin{cases}
+   0 & p \mid  b \\
+   1 & p \nmid b 
+\end{cases}
+\]
+In this case, since $p \nmid b$, then $X^2$ will always equal 1. Meaning the
+only solutions to $X$ are -1 and 1. 
+
+\noindent If $p \mid b$, then $X^2$ will always only have one solution in $0$ because
+of Fermet's Little Theorem shown above. \\
+
+\noindent \textbf{\large Part b:} \\
+$(p,b) = (7,2)$: $\{3,4\}$, \  $(p,b) = (11,5)$: $\{4, 7\}$ \\
+$(p,b) = (11,7)$: $\{\}$ (No square roots), \ $(p,b) = (37,3)$: $\{15, 22\}$
+\\
+
+\noindent \textbf{\large Part c: } \\
+$29 \mod 35$ has $4$ square roots. The reason why this does not contradict 
+the statement in (a) is because 35 is not an odd PRIME integer, which is 
+described as $p$ in part a. \\
+
+\noindent \textbf{\large Part d:} \\
+Since $g$ is a primitive root, we know that the field consists of the powers
+of $g$ as shown below:
+\[\{1,g,g^2,g^3,\ldots, g^{p-2}\}\] 
+Given $a \equiv g^k \mod p$, we know that a has a square root modulo p if 
+$ \sqrt{g^k} \in G$.
+It is now apparent, that $k$ must be even in order for a to have a square root 
+modulo of p as $k$ being odd leads to $ \sqrt{a} \notin G$ as $g^k$ where k is
+odd is not a a modulo of p. 
+
+\end{addmargin}
+
+\section*{\large \textbf{Problem 2.10}}
+
+\begin{addmargin}{5pt}
+\noindent \textbf{\large Part a:} \\
+$a$ and 15619 relate to eachother by this DLP equation:
+\[m^{a\alpha} \mod p = m \mod p\] 
+where $\alpha = 15619$. 
+The explanation for $b$ and 31883 is the same except replace it with 
+$\beta = 31883$. \\
+
+The algorithm works because Alice first encrypts message $m$ with her key $a$
+and Bob encrypts on top of that with $b$. After sending the encrypted message 
+back to Alice, Alice uses $\alpha$ as explained above to decrypt the message
+and Bob does the same when he gets the message back. At no point does m
+show up through the public channel as a result of commutative properties of 
+exponentiation of the same base. \\
+
+\noindent \textbf{\large Part b:} \\
+Step 1: Bob and Alice agree on a prime integer $p$. \\
+Step 2. Bob generates a random $b$ as his key, and Alice does so with $a$. \\
+Step 3: Alice encrypts message $m$ with $a$ and sends $u = m^a \mod p$ to Bob.\\ 
+Also, Alice and Bob solve for $\alpha$ and $\beta$ through the DLP equations:
+\[g^{a\alpha} \mod p = g \mod p\]
+\[g^{b\beta} \mod p = g \mod p\]
+Step 4. Bob does the same except encrypts $u$ with his key $b$. He sends 
+$v = u^b \mod p$ back to Alice. \\
+Step 5: Using $\alpha$, Alice decrypts $v$ with the equation: 
+\[w = v^{\alpha} \mod p\]
+and sends $w$ back Bob. \\
+Step 6: Bob does the same except decrypts $w$ with $\beta$. Now Bob has solved 
+for $m$. \\
+
+\noindent \textbf{\large Part c:} \\
+This cryptosystem has one more exchange than the Elgamal Public Key System, 
+which is more dangerous of getting caught or leaking important numbers. 
+(3 exchanges vs 2 exchanges) \\
+
+\noindent \textbf{\large Part d:} \\
+Assuming Eve knows that Bob and Alice are using Elgamal and the same for the 
+current cryptosystem, which means the Eve sees and knows exactly what Bob and 
+Alice are exchanging, then she can solve the Elgamal problem and find $m$ with 
+a DLP problem but not the cryptosystem described above. The reason for this is 
+that the Elgamal system publishes $p$ and $g$ prime integers which allows for 
+Eve to solve for $m$ with $g^a, c_{1}, c_{2}$. \\
+
+Eve can NOT break the system if she can solve the DLP problem because the base 
+value of $g$ is not made public in the described cryptosystem. This makes 
+the solving of $m$ made impossible given $m^a, m^b, m^{ab}, p$ in the 2.10
+protocol. 
+
+Eve can also not break the Diffe-Helmen because of g not being public. Along
+with being able to solve DLP would imply being able to solve the DH.\\
+
+\end{addmargin}
+
+\end{document}
+

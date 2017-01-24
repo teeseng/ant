@@ -1,0 +1,107 @@
+\documentclass[10pt]{amsart}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=0.50in]{geometry} \usepackage{indentfirst}
+\usepackage{graphicx}
+\usepackage{amsthm}
+\usepackage{scrextend}
+\usepackage{amssymb}
+
+\title{Proofs: Homework 5}
+\author{Andrew Tseng: art2589}
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\section*{\large \textbf{Problem 3.5}}
+\begin{addmargin}{8pt}
+
+\textbf{\small Part A} \\
+If $p$ and $q$ are distinct primes, then $\phi(pq) = \phi(q) * \phi(p)$. \\
+
+\noindent \textbf{\small Part B} \\
+If $p$ is prime, then $\phi(p^2) = p - 1$. \\
+We will prove that: \\
+If $p$ is prime, then $\phi(p^j) = p^{j} - p^{j-1}$. \\
+Let $m$ be a number that is less than $p^k$, the only way $\gcd(m,p^k) > 1$ if
+$m$ is a multiple of $p$. Through since there are a number of $p^{j-1}$ multiples
+in a range of $1$ to $p^j$. Thus the number of $m$ that have suffice with the
+requirements of the phi function is $p^j - p^{j-1}$.
+
+Formula was analyzed from running many results from phi.py \\
+
+\noindent \textbf{\small Part C} \\
+Since $\gcd(M,N) = 1$, then $M,N$ are distinct primes, which proves
+from part A that $\phi(MN) = \phi(M)\phi(N)$. \\
+
+\noindent \textbf{\small Part D}
+\textbf{\small Proof}: \\
+\indent We will prove that $\phi(N) = N\prod_{i=1}^{r}(1 - \frac{1}{p_{i}})$ such that
+$p_{1}, p_{2}, \ldots ,p_{r}$ are the distinct prime factors of $N$.
+\[\phi(N) = \phi((p_{1})^{k_{1}})\phi((p_{2})^{k_{2}}) \ldots \phi((p_{r})^{k_{r}}))\]
+
+Using the formula from part b:
+\[\phi(N) = (p_{1}^{k_{1}} - p_{1}^{k_{1} - 1})(p_{2}^{k_{2}} - p_{2}^{k_{2} - 1})
+\ldots (p_{r}^{k_{r}} - p_{r}^{k_{r} - 1})\]
+
+\[\phi(N) = p_{1}^{k_{1}}(1 - \frac{1}{p_{1}}) p_{2}^{k_{2}}(1 - \frac{1}{p_{2}})
+\ldots  p_{r}^{k_{r}}(1 - \frac{1}{p_{r}})
+\]
+
+\[\phi(N) = p_{1}^{k_{1}}p_{2}^{k_{2}} \ldots p_{r}^{k_{r}}(1 - \frac{1}{p_{1}})
+\ldots (1 - \frac{1}{p_{r}}) = N(1 - \frac{1}{p_{1}})(1 - \frac{1}{p_{2}})
+\ldots (1 - \frac{1}{p_{r}})\]
+
+Thus:
+\[\phi(N) = N\prod_{i=1}^{r}(1 - \frac{1}{p_{i}})\]
+
+
+\noindent \textbf{\small Part E} \\
+$\phi(1728) = 576$
+$\phi(1575) = 720$
+$\phi(889056) = 254016$ \\
+Solutions done from formula in part D and checked with the program phi.py
+\end{addmargin}
+
+\section*{\large \textbf{Problem 3.8}}
+\begin{addmargin}{8pt}
+Since Bob chose an $N$ that is too small. Eve can iterate and test all values
+to find $p$. This allows Eve to find $p$ and $q$ very easily. Since we know
+that $ed \equiv 1 \mod (p-1)(q-1)$, then finding $d$ by iterating through values
+will be considered "easy" for Eve. Program used to solve this is in eve.py
+Using the program, we conclude that $d = 11629$. \\
+\end{addmargin}
+
+\section*{\large \textbf{Problem 3.10}}
+\begin{addmargin}{8pt}
+\textbf{\small Part A} \\
+We know that if N is large that the
+$\gcd(k_{1}(p-1)(q-1), k_{2}(p-1)(q-1)) = (p-1)(q-1)$
+where $k_{1},k_{2} \in Z$. Because we can find a specific pair of
+$d,e$, we can get the k(p-1)(q-1) by $de-1$. Finding $(p-1)(q-1)$ allows us
+to find $p + q$ which makes it easy to find a factor of N as we know the
+bounds of it in this case. In other words, you can test from values from
+$3$ to $q + p$. \\
+
+\noindent \textbf{\small Part B} \\
+$p = 5347$,
+$q = 7247$ \\
+
+\noindent \textbf{\small Part C} \\
+$p=10867$,
+$q=20707$ \\
+
+\noindent \textbf{\small Part D} \\
+$p=13291$,
+$q=97151$ \\
+\end{addmargin}
+
+\section*{\large \textbf{Problem 3.13}}
+\begin{addmargin}{8pt}
+We found $\gcd(e_{1},e_{2})$ is 1.
+The equation $e_{1}u + e_{2}v = 1$ from section 3.5 indicate the following:
+\[c_{1} * c_{2} = m^{\gcd(e_{1},e_{2})} = m\]
+\[m \equiv (c_{1} * c_{2}) \mod N\] \\
+Using the numbers given: $m = 13917916680$
+\end{addmargin}
+
+\end{document}

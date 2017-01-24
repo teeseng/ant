@@ -1,0 +1,95 @@
+\documentclass[10pt]{amsart}
+\usepackage[utf8]{inputenc} 
+\usepackage[margin=0.50in]{geometry}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\usepackage{amsthm}
+\usepackage{scrextend}
+\usepackage{amssymb}
+\usepackage{array}
+
+\title{Proofs: Homework 4}
+\author{Andrew Tseng: art2589}
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\section*{\large \textbf{Problem 2.34}}
+\begin{addmargin}{5pt}
+\textbf{\small Part A} \\
+Given that $a$ and $b$ are nonzero polynomials, then the $\deg(a)$ and $\deg(b)$
+are the highest power within the polynomials. By definition and properties of
+multiplying, $a \cdot b$ is the field of the product of the two nonzero
+polynomials which means that highest power of $a \cdot b$ is the $\deg(a)
++ \deg(b)$.  \\
+
+\noindent \textbf{\small Part B} \\
+Assume that polynomial $a$ has a multiplicative inverse, meaning that there
+exists polynomials $b,c \in F[x]$. Thus $b(x)c(x) = 1$, since $b,c$ exist in
+$F[x]$, then $\deg(b) = \deg(c) = 0$. Meaning that $\deg(a) = 0$, implying
+that $a$ is a constant polynomial. \\
+
+\noindent Assume that the polynomial $a$ is a constant polynomial, meaning that 
+$\deg(a) = 0$. Let $b,c$ be the multiplicative inverses of $a$ such that
+$c(x)b(x) = 1$. Since $\deg(b) + \deg(c) = 0$ and we know that $b,c$ are
+nonnegative polynomials since they are in the field $F$, then $b,c$ are
+multiplicative inverses. \\
+
+\noindent \textbf{\small Part C} \\
+
+\noindent \textbf{\small Part D} \\
+
+\end{addmargin}
+
+\section*{\large \textbf{Problem 2.37}} 
+\begin{addmargin}{5pt}   
+Reducing the polynomial to the form, $(x + a)(x + b)(x + c)$, we create the 
+system equations with $a,b,c$
+\[abc           = 1\]
+\[2(a + b) + c  = 0\]
+\[ab + 2c(a+b)  = 1\]
+\\
+After solving the variables we find that $a + b + c = 0$ and $abc = 1$, where
+there is no solution since $a,b,c > 0$. Thus the polynomial is irreducuble. \\
+\end{addmargin}
+
+\section*{\large \textbf{Problem 2.38}}
+\begin{addmargin}{5pt}    
+\begin{center}
+ \begin{tabular}{||c c c c c c c ||} 
+ \hline
+$1$ & $x$ & $x^2$ & $1 + x$ & $1 + x^2$ & $x + x^2$ & 
+    $1 + x + x^2$ \\ [0.5ex] 
+ \hline\hline
+  0 & 0 & 0 & 0 & 0 & 0 & 0 \\ 
+ \hline
+ $1$ & $x$ & $x^2$ & $1 + x$ & $1 + x^2$ & $x + x^2$ & $1 + x + x^2$  \\ 
+ \hline
+ $x$   & $x^2$ & $x + 1$ & $x + x^2$ & $1$ & $x^2 + x + 1$  & $x^2 + 1$\\
+\hline
+ $x + 1$   & $x^2 + x$ & $x^2 + x + 1$ & $1 + x^2$ & $x^2$  & $1$  & $x$\\
+ \hline
+ $x^2$ & $x+1$ & $x + x^2$ & $1 + x + x^2$ & $1 + x^2$ & $1$ & $x$ \\
+ \hline
+ $1 + x^2$ & $1$ & $x$  & $x^2$ & $ 1 + x + x^2 $ & $1 + x$ & $x + x^2$  \\ [0.5ex] 
+ \hline
+$x + x^2$ & $x^2 + x + 1$ & $1 + x^2$ & $1$ & $1 + x$ & $x$ & $x^2$  \\ 
+ \hline
+ $1 + x + x^2$ & $1 + x^2$ & $1$  & $x$ & $x + x^2$  & $x^2$  & $1 + x$  \\ [0.5ex] 
+\hline \\
+\end{tabular}
+\end{center}
+\end{addmargin}
+
+
+\section*{\large \textbf{Problem 2.40}}
+\begin{addmargin}{5pt}    
+Both rings hold $p^e$ elements but $F_{p^e}[X]$ holds the coefficients of 
+the polynomial while $Z/(p^e)Z$ holds all values from $0$ to $p^e - 1$. This 
+means all values in the modulos ring are distinct while the polynomial ring 
+does not guarantee this.  
+\end{addmargin}
+
+
+\end{document}
+

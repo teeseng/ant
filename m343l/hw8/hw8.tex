@@ -1,0 +1,68 @@
+\documentclass[10pt]{amsart}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=0.50in]{geometry}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\usepackage{amsthm}
+\usepackage{scrextend}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{titlesec}
+
+\title{\LARGE M343L: Homework Set 8 Proofs}
+\author{Andrew Tseng: art2589}
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\section*{\small \textbf{Problem 6.17}}
+
+\noindent \textbf{\small Part A:} \\
+To prove $m'_{1} = m_{1}, m'_{2} = m_{2}$. \\
+\textit{Proof:}
+We know that $S = n_{1}R = T$ where $S = kQ_{a}, R = kP$ which makes shows
+that the pairing will lead to
+\[x_{T}^{-1}x_{S}m_{1} = m'_{1} = m_{1}\]
+\[y_{T}^{-1}y_{S}m_{2} = m'_{2} = m_{2}\]
+
+\noindent \textbf{\small Part B:} \\
+The message given from MV-elgamal encryption is $(R, c_{1}, c_{2})$ \\
+
+\noindent \textbf{\small Part C:} \\
+Alice Encryption Key: $Q_{A} = (1104, 492)$.
+$(m_{1}, m_{2}) = (509, 980)$\\
+
+\section*{\small \textbf{Problem 6.18}}
+\noindent \textbf{\small Part A:}
+Since Eve knows $E$ and we know that $c_{1} = x_{P}m_{1}, c_{2} = y_{P}m_{2}$,
+thus $x_{P} = \frac{c_{1}}{m_{1}}, y_{P} = \frac{c_{2}}{m_{2}}$. Plugging these
+values into the curve:
+\[(\frac{c_{2}}{m_{2}})^2 = (\frac{c_{1}}{m_{1}})^3 + A(\frac{c_{1}}{m_{1}})
++ B\]
+
+Eve then can solve for the roots of this polynomials for $m_{1}$ or $m_{2}$,
+given she knows one of these values. It becomes as simple as solve for the roots.\\
+
+\noindent \textbf{\small \textbf{Part B:}}
+Since $\frac{814}{1050} \in F_{1201} = 957$
+Given the previous $E$, we can find two possible solutions to
+\[y_{s}^2 = (957)^3 + 19(957) + 17\]
+\textit{$y \in [182, 1019]$}\\
+If $y = 182$, then the message pair is (1050,440).
+If $y = 1019$, then the message pair is (1050, 761).\\
+
+\section*{\small \textbf{Problem 6.29}}
+\textit{Proof: Given $R(x),S(x)$ are rational functions}
+Since $div(f) = \sum_{Z}^{} ord(f)Z$, then due to the additive properties of the functions
+at the points of the curve, we can say that 
+\[div(R(x)S(x)) = div(R(x)) + div(S(X))\]
+\\
+
+\section*{\small \textbf{Problem 6.32}}
+
+
+\section*{\small \textbf{Problem 6.33}}
+
+
+\end{document}
+

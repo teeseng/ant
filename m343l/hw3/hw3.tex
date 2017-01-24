@@ -1,0 +1,103 @@
+\documentclass[10pt]{amsart}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=0.50in]{geometry}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\usepackage{amsthm}
+\usepackage{scrextend}
+\usepackage{amssymb}
+
+\title{Proofs: Homework 3}
+\author{Andrew Tseng: art2589}
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\section*{\large \textbf{Problem 2.3}}
+\begin{addmargin}{5pt}
+\textbf{\small Part A} \
+Because of FLT and remark 2.3, we can say that:
+\[(\exists k_{1},k_{2} \in Z)(a + k_{1}(p-1) = b + k_{2}(p-1) \mod p-1) \]
+Since $a$ and $b$ are known integer solutions that solve for the SAME $h$ in
+the DLP solution, this means that they are in the same congruence class of $p$. 
+This implies that
+\[a \equiv b \mod (p-1)\]
+\\
+This also shows that the two equations of $a + k(p-1)$ and $b + k(p-1)$ map to
+the same power in the group $\frac{Z}{(p-1)Z}$,
+since they solve for the same $h$. \\
+
+\noindent \textbf{\small Part B} \
+Let $x,y$ be integers that solve the following DLP
+\[g^x = a \mod p\]
+\[g^y = b \mod p\]
+By modular arithmetic this means that
+\[g^{x+y} = ab \mod p\]
+Thus it is obvious that
+\[\log_{g}(a) + \log_{g}(b) = \log_{g}(ab)\]
+\[x + y = x + y\] \\
+
+\noindent \textbf{\small Part C} \
+We know that $g^x = h \mod p$ implies that $\log_{g}(h) = x$.  \\
+By mulitplying both sides with an integer $n$  \\
+\noindent \[g^{nx} = h^n \mod p\]
+This implies the same expression from above
+\[\log_{g}(h^n) = nx = n\log_{g}(h)\]
+\\
+\end{addmargin}
+
+\section*{\large \textbf{Problem 2.24}}
+\begin{addmargin}{5pt}
+\noindent \textbf{\small Part A} \\
+Given: $(b + kp)^2 = b^2 + 2kbp + (kp)^2$ \\
+We know that $b^2 = gp + a$, because $b$ is a sqr root modulo of $a \mod p$:
+\[ (b + kp)^2 = gp + a + 2kbp = a + p(g + 2kb) \mod p^2\]
+So we are to find a $k$ such that $g + kb \mod p = 0$.  \\
+
+\noindent \textbf{\small Part B} \\
+$p = 1291$, $b=537$, $a = 476$, $g = 223$, then we find a $k$ such that
+$g + kb \mod p = 0$. \\
+Using a computer program with the formula mentioned, $k=239$ is a solution.\\
+
+\noindent \textbf{\small Part C} \\
+From the given, we can assume that $b^2 = gp^n + a$ and so $(b + jp^n)^2 = gp^{n+1} + a$.
+\\
+We find that:
+\[gp^n + a + 2bjp^n + p^{2n} = a + gp^{n+1}\]
+\[a + p^n(g + 2bj + p^n) = a + gp^{n+1}\]
+This implies that if $g + 2bj + p^n \equiv 0 \mod p$ then $b + jp^n$ is a square
+root modulo of $a \mod p^{n+1}$. We want a $j$ that satisfies that condition.
+
+\noindent \textbf{\small Part D} \\
+Since we know from part a that if $b^2 \equiv a \mod p$ then there is a square root
+modulo for $a \mod p^2$. \\
+
+Using induction our base case would be part A.
+Now we know that the predicate is true for n = 1, then we are to prove that
+for ever $b$ that is a square root modulo of $a \mod p^n$, then there is a square
+root modulo for $a \mod p^{n+1}$. \\
+
+Thus with strong induction, if there exists a square root modulo for $a \mod p$, then
+there exists a square root modulo for $a \mod p^{2}, a \mod p^{3}, a \mod p^{4}, \ldots,
+a \mod p^n$. \\
+
+\noindent \textbf{\small Part E} \\
+Given that, $p = 13, a = 3, b = 9, g = 6$. \\
+$6 + 2(9)j + 169 \equiv 0 \mod p$. \\
+Solution(s): $j = 4, 17$. \\
+\end{addmargin}
+
+\section*{\large \textbf{Problem 2.27}}
+\begin{addmargin}{5pt}
+Pohlig-Hellman solves the solution of $x$ where $g^{x_{1}q_{1}} = h^{q_{1}}$ and 
+$g^{x_{2}q_{2}} = h^{q_{2}}$. We could then use CRT to find the solution $x$ such
+that $x \equiv x_{1} \mod q_{1}$ and  $x \equiv x_{2} \mod q_{2}$. \\
+
+Because $q_{1}, q_{2}$ are prime, we know that $\gcd(q_{1}, q_{2}) = 1$ so there
+exists a $a,b$ such that $aq_{1} + bq_{2} = 1$. So we can say that: \\
+$g^{x(aq_{1} + bq_{2})} = (g^x)^{aq_{1}}(g^x)^{bq_{2}} =
+h^{aq_{1}}h^{bq_{2}} = h$.
+
+\end{addmargin}
+
+\end{document}
